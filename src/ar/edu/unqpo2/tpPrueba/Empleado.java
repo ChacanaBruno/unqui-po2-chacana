@@ -8,7 +8,7 @@ public class Empleado {
 	private String estadoCivil; 
 	private LocalDate fechaNacimiento;
 	private Double sueldoBasico;
-	
+//Constructor con herencia
 	public Empleado(String nombre, String cuit, String estadoCivil, LocalDate fechaNacimiento, Double sueldoBasico) {
 		super();
 		this.nombre = nombre;
@@ -17,6 +17,7 @@ public class Empleado {
 		this.fechaNacimiento = fechaNacimiento;
 		this.sueldoBasico = sueldoBasico;
 	}
+//getter and setters 
 	public String getNombre() {
 		return nombre;
 	}
