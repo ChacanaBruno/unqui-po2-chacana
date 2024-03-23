@@ -48,7 +48,11 @@ public class Empleado {
 	public void setSueldoBasico(Double sueldoBasico) {
 		this.sueldoBasico = sueldoBasico;
 	}
-
+	public int calcularEdad() {
+		// TODO Auto-generated method stub
+		int edadEsperada = LocalDate.now().getYear() - fechaNacimiento.getYear();
+		return edadEsperada;
+	}
 
 
 }
