@@ -48,13 +48,19 @@ public class Empleado {
 	public void setSueldoBasico(Double sueldoBasico) {
 		this.sueldoBasico = sueldoBasico;
 	}
+	//METODOS 
 	public int calcularEdad() {
 		// TODO Auto-generated method stub
 		int edadEsperada = LocalDate.now().getYear() - fechaNacimiento.getYear();
 		return edadEsperada;
 	}
-
-
+	public void mostrarEdad() {
+	    String nombreDelEmpleado = getNombre();
+	    int edad = calcularEdad();
+	    System.out.println("La edad de " + nombreDelEmpleado + " es: " + edad + " años.");
+	}
+	
+	
 }
 
 
