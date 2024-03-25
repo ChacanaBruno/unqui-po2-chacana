@@ -35,4 +35,56 @@ public class EmpleadoTest {
         // Verificación: Comparar el resultado esperado con el real
         assertEquals("El sueldo bruto calculado no es el esperado", sueldoBrutoEsperado, sueldoBrutoReal, 0.001); // El último parámetro es el delta para comparaciones de punto flotante
     }
+    
+    @Test
+    public void testCalcularRetenciones() {
+        // Preparación del empleado de prueba
+    	LocalDate fechaNacimiento = LocalDate.of(1990, 1, 1);
+    	EmpleadoPermanente empleadoPermanente = new EmpleadoPermanente("Juan Perez", "20-12345678-9", "Soltero", fechaNacimiento, 30000.0, 2 , 5 , true);
+        // Ajusta esta línea según el constructor real de tu clase Empleado.
+
+        // Cálculo esperado
+        double montoPorHijo = 2 * 20;
+        double montoPorObraSocial = (30650.0 * 0.10) + montoPorHijo;
+        double montoPorJubilacion = 30650.0 * 0.15;
+        double retencionesEsperadas = montoPorObraSocial + montoPorJubilacion;
+
+        // Ejecución y verificación
+        assertEquals("Las retenciones calculadas no son las esperadas", retencionesEsperadas, empleadoPermanente.calcularRetenciones(), 0.01);
+    }
+    	//cuando falla lo que esta entre " " indica el error
+    
+    
+    @Test
+    public void testCalcularSueldoNeto() {
+        // Definir los valores esperados según tu lógica de negocio
+    	LocalDate fechaNacimiento = LocalDate.of(1990, 1, 1);
+    	EmpleadoPermanente empleadoPermanente = new EmpleadoPermanente("Juan Perez", "20-12345678-9", "Soltero", fechaNacimiento, 30000.0, 2 , 5 , true);
+        double sueldoBrutoEsperado = 30650.0;
+        double retencionesEsperadas = 7702.5; // Este es un valor de ejemplo. Calcula según tu lógica.
+        double sueldoNetoEsperado = sueldoBrutoEsperado - retencionesEsperadas;
+
+        // Realizar la prueba
+        double sueldoNetoCalculado = empleadoPermanente.calcularSueldoNeto();
+
+        // Verificar el resultado
+        assertEquals("El sueldo neto calculado no es el esperado", sueldoNetoEsperado, sueldoNetoCalculado, 0.01);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
