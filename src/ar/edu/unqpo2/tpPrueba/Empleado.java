@@ -2,7 +2,7 @@ package ar.edu.unqpo2.tpPrueba;
 
 import java.time.LocalDate;
 
-public class Empleado {
+public abstract class Empleado {
 	private String nombre;
 	private String cuit;
 	private String estadoCivil; 
@@ -59,6 +59,45 @@ public class Empleado {
 	    int edad = calcularEdad();
 	    System.out.println("La edad de " + nombreDelEmpleado + " es: " + edad + " años.");
 	}
+	
+	public void mostrarSueldoBruto() {
+	    String nombreDelEmpleado = getNombre();
+	    double sueldoBruto = calcularSueldoBruto();
+	    System.out.println("El sueldo bruto de " + nombreDelEmpleado + " es: " + sueldoBruto );
+	}
+	
+	public void mostrarRetenciones() {
+	    String nombreDelEmpleado = getNombre();
+	    double retenciones = calcularRetenciones();
+	    System.out.println("Las retenciones de " + nombreDelEmpleado + " son: " + retenciones );
+	}
+	
+	
+	public boolean tieneConyuge() { //debe conocer el metodo por ser la clase padre pero responde false pues no se indica si puede o no tener conyugue
+        return false;
+    }
+	public abstract double calcularSueldoBruto(); //debe saber el metodo de forma abstracta para repestar herencia.
+	
+	public abstract double calcularRetenciones();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
