@@ -39,10 +39,38 @@ public class EmpleadoTemporal extends Empleado {
 		
 		return sueldoBruto;
 	}
+	
+	
+	public double calcularObraSocialParaEmpleadoTemporal() {
+		
+		int edad = calcularEdad();
+		double sueldoBruto = calcularSueldoBruto();
+		double montoPorObraSocial  = sueldoBruto * 0.10 ;
+		
+		if (edad > 50) {
+			montoPorObraSocial += 25;
+		} 	
+		return montoPorObraSocial;
+	}
+	
+	public double calcularAportesJubulatoriosParaEmpleadoTemporal()	{
+		double sueldoBruto = calcularSueldoBruto();
+		int horasExtras = getCantidadDeHorasExtras();
+		double montoPorJubilacion = sueldoBruto * 0.10 + 5 * horasExtras;
+		
+		return montoPorJubilacion;
+		
+	}	
 	@Override
 	public double calcularRetenciones() {
-		// TODO Auto-generated method stub
-		return 0;
+		/*Las retenciones que se realizan a este empleado son:
+		Obra Social: 10% de su sueldo bruto + $25 si supera los 50 años 
+		Aportes Jubilatorios: 10% de su sueldo bruto + $5 por cada hora extra*/
+		
+		double retenciones = calcularObraSocialParaEmpleadoTemporal()
+							+ calcularAportesJubulatoriosParaEmpleadoTemporal() ;
+		return retenciones ;
+			
 	}
 
 	
