@@ -102,7 +102,6 @@ public class Empresa {
 				//creacion de recibo de haberes
 				ReciboDeHaberes recibo = new ReciboDeHaberes(
 						empleado.getNombre(), 
-						empleado.getDireccion(),
 						fechaEmision, 
 						sueldoBruto, 
 						sueldoNeto
@@ -110,7 +109,11 @@ public class Empresa {
 				
 				reciboDeHaberes.add(recibo);
 
-				System.out.println("Recibo generado para " + empleado.getNombre());
+				System.out.println(
+						"Recibo generado para: " + empleado.getNombre() + "\n" +
+                        "Fecha de Emisión: " + fechaEmision.toString() + "\n" +
+                        "Sueldo Bruto: $" + sueldoBruto + "\n" +
+                        "Sueldo Neto: $" + sueldoNeto);
 
 			} catch (Exception e) {
 				System.out.println("Error al generar recibo para " + empleado.getNombre() + ": " + e.getMessage());
