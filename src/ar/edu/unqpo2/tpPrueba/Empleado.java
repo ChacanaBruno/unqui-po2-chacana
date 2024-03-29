@@ -97,7 +97,15 @@ public abstract class Empleado {
 	public abstract double calcularSueldoBruto(); // debe saber el metodo de forma abstracta para repestar herencia.
 
 	public abstract double calcularRetenciones();
-
+	
+	public double calcularSueldoNeto() {
+		
+		double sueldoBruto = calcularSueldoBruto();
+		double retenciones = calcularRetenciones();
+		double sueldoNeto = sueldoBruto - retenciones;
+				return sueldoNeto;
+	}
+	
 	public double calcularMontoPorObraSocial() {
 		return 0;
 	}
