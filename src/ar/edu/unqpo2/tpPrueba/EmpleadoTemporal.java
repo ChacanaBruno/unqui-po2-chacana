@@ -7,6 +7,9 @@ public class EmpleadoTemporal extends Empleado {
 	private int cantidadDeHorasExtras;
 
 	// constructor
+	public EmpleadoTemporal() {
+		
+	}
 	public EmpleadoTemporal(String nombre, String cuit, String estadoCivil, LocalDate fechaNacimiento,
 			Double sueldoBasico, LocalDate fechaFinDeAsigcion, int cantidadDeHorasExtras) {
 		super(nombre, cuit, estadoCivil, fechaNacimiento, sueldoBasico);
@@ -77,6 +80,7 @@ public class EmpleadoTemporal extends Empleado {
 		double retenciones = calcularMontoPorObraSocial() + calcularMontoPorJubilacion();
 		return retenciones;
 
+		
 	}
 
 }

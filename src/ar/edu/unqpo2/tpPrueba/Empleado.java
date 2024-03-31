@@ -9,12 +9,11 @@ public abstract class Empleado {
 	private LocalDate fechaNacimiento;
 	private Double sueldoBasico;
 //Constructor con herencia
-
-	protected Empleado() {
-
+	public Empleado() {
+		
 	}
 
-	protected Empleado(String nombre, String cuit, String estadoCivil, LocalDate fechaNacimiento, Double sueldoBasico) {
+	public Empleado(String nombre, String cuit, String estadoCivil, LocalDate fechaNacimiento, Double sueldoBasico) {
 		super();
 		this.nombre = nombre;
 		this.cuit = cuit;
@@ -94,7 +93,7 @@ public abstract class Empleado {
 		return false;
 	}
 
-	public abstract double calcularSueldoBruto(); // debe saber el metodo de forma abstracta para repestar herencia.
+	public abstract double calcularSueldoBruto(); // debe saber el metodo de forma abstracta para repetar herencia.
 
 	public abstract double calcularRetenciones();
 	
@@ -108,6 +107,7 @@ public abstract class Empleado {
 	
 	public double calcularMontoPorObraSocial() {
 		return 0;
+		
 	}
 
 	public double calcularMontoPorJubilacion() {

@@ -11,7 +11,7 @@ public class Empresa {
 	private List<ReciboDeHaberes> reciboDeHaberes;
 
 	// constructores
-	protected Empresa() {
+	public Empresa() {
 
 	}
 
@@ -120,6 +120,7 @@ public class Empresa {
 			}
 
 		}
+		
 	}
 
 }

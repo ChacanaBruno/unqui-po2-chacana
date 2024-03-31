@@ -107,6 +107,7 @@ public class EmpleadoPermanente extends Empleado {
 		double sueldobruto = calcularSueldoBruto();
 		double sueldoNeto = sueldobruto - retenciones;
 
+		
 		return sueldoNeto;
 	}
 }
