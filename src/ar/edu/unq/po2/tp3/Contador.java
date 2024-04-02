@@ -49,10 +49,10 @@ public class Contador {
 	}
 
 	/*
-	  Verificar si es Múltiplo: Dentro del bucle, se usa el operador de módulo (%)
-	  para determinar si el número actual n es un múltiplo del número especificado.
-	  Un número A es múltiplo de otro número B si A % B es igual a 0, es decir, si
-	  A se puede dividir exactamente por B sin dejar resto.
+	 * Verificar si es Múltiplo: Dentro del bucle, se usa el operador de módulo (%)
+	 * para determinar si el número actual n es un múltiplo del número especificado.
+	 * Un número A es múltiplo de otro número B si A % B es igual a 0, es decir, si
+	 * A se puede dividir exactamente por B sin dejar resto.
 	 */
 
 	public int contarMultiplosDe(int numero) {
@@ -69,4 +69,58 @@ public class Contador {
 		// Devuelve la cantidad total de múltiplos del número dado encontrados.
 		return contador;
 	}
+	/*
+	 * private static int para contarDigitosPares(int numero) indica que es un
+	 * método auxiliar de la clase, no accesible desde fuera de ella, que puede ser
+	 * llamado sin instanciar la clase y que devuelve un entero. Estas
+	 * características lo hacen adecuado para su propósito dentro de la lógica de la
+	 * clase NumeroConMasDigitosPares.
+	 */
+
+	static int contarDigitosPares(int numero) {
+		int contador = 0;
+		numero = Math.abs(numero); // Convierte el número a positivo para manejar correctamente números negativos.
+
+		while (numero > 0) {
+			if ((numero % 10) % 2 == 0) { // Verifica si el último dígito es par.
+				contador++;
+			}
+			numero /= 10; // Elimina el último dígito.
+		}
+
+		return contador; // Devuelve la cantidad de dígitos pares.
+	}
+
+	public static void encontrarNumerosConMasDigitosPares(int[] numeros) {
+		ArrayList<Integer> numerosConMaxPares = new ArrayList<>();
+		int maxCantidadPares = 0;
+
+		// Determina la máxima cantidad de dígitos pares entre todos los números.
+		for (int numero : numeros) {
+			int cantidadPares = contarDigitosPares(numero);
+			maxCantidadPares = Math.max(maxCantidadPares, cantidadPares);
+		}
+
+		// Encuentra todos los números que tienen esa cantidad máxima de dígitos pares.
+		for (int numero : numeros) {
+			if (contarDigitosPares(numero) == maxCantidadPares) {
+				numerosConMaxPares.add(numero);
+			}
+		}
+
+		// Imprime los números con la máxima cantidad de dígitos pares.
+		if (!numerosConMaxPares.isEmpty()) {
+			System.out.println("Estos son los números con más dígitos pares: ");
+			for (int numero : numerosConMaxPares) {
+				System.out.println(numero + " ");
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] numeros = { 123, -4567, 12345, -678, 9012, 480 }; // Incluye números con igual cantidad máxima de dígitos
+																// pares
+		encontrarNumerosConMasDigitosPares(numeros);
+	}
+
 }
