@@ -1,16 +1,16 @@
 package ar.edu.unq.po2.tp3.EquipoDeTrabajo;
 
-public class Persona {
+public class PersonaTrabajo {
 	private String nombre;
 	private String apellido;
 	private int edad;
 	
 	
-	public Persona() {
+	public PersonaTrabajo() {
 		
 	}
 	
-	public Persona(String nombre, String apellido, int edad) {
+	public PersonaTrabajo(String nombre, String apellido, int edad) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;

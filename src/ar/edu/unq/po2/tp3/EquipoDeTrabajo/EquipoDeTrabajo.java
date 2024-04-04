@@ -5,7 +5,7 @@ import java.util.List;
 
 public class EquipoDeTrabajo {
     private String nombre;
-    private List<Persona> integrantes;
+    private List<PersonaTrabajo> integrantes;
 
     // Constructor que inicializa el equipo con un nombre y una lista vacía de integrantes
     public EquipoDeTrabajo(String nombre) {
@@ -14,7 +14,7 @@ public class EquipoDeTrabajo {
     }
 
     // Método para agregar un integrante al equipo
-    public void agregarIntegrante(Persona persona) {
+    public void agregarIntegrante(PersonaTrabajo persona) {
         integrantes.add(persona);
     }
 
@@ -24,7 +24,7 @@ public class EquipoDeTrabajo {
     }
 
     // Getter para la lista de integrantes
-    public List<Persona> getIntegrantes() {
+    public List<PersonaTrabajo> getIntegrantes() {
         return integrantes;
     }
 
@@ -41,17 +41,40 @@ public class EquipoDeTrabajo {
     // Método opcional para imprimir la información del equipo y sus integrantes
     public void imprimirInformacionEquipo() {
         System.out.println("Nombre del Equipo: " + nombre);
-        System.out.println("Integrantes del Equipo:");
-        for (Persona integrante : integrantes) {
-            System.out.println("- " + integrante.getNombre());
-        }
+        System.out.println("La edad promedio de los integrantes del Equipo es:");
+        System.out.println("- " + indicarPromedioDeEdadDeEquipo());
+        
     }
+    
+    
+    
+    
+    public int indicarPromedioDeEdadDeEquipo() {
+        int sumaDeEdad = 0;
+        if (integrantes.isEmpty()) { // Verifica si la lista está vacía para evitar división por cero
+            return 0;
+        }
+        for(PersonaTrabajo integrante: integrantes) {
+            sumaDeEdad += integrante.getEdad(); // Acumula las edades de los integrantes
+        }
+        return sumaDeEdad / integrantes.size(); // Divide la suma total de las edades por el número de integrantes para obtener el promedio
+    }
+
+    
+
+
+    public static void imprimirPromedioDeEdad(EquipoDeTrabajo equipo) {
+        int promedioDeEdad = equipo.indicarPromedioDeEdadDeEquipo();
+        System.out.println("El promedio de edad del equipo es: " + promedioDeEdad);
+    }
+    
+    
     
     // Ejemplo de uso
     public static void main(String[] args) {
         EquipoDeTrabajo equipo = new EquipoDeTrabajo("Desarrolladores");
-        Persona persona1 = new Persona("Juan","Perez", 21);
-        Persona persona2 = new Persona("Ana","Lalo", 36);
+        PersonaTrabajo persona1 = new PersonaTrabajo("Juan","Perez", 21);
+        PersonaTrabajo persona2 = new PersonaTrabajo("Ana","Lalo", 36);
 
         equipo.agregarIntegrante(persona1);
         equipo.agregarIntegrante(persona2);
