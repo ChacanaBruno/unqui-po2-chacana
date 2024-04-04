@@ -80,6 +80,7 @@ public class EmpresaTest {
 
 		// Llamar al método a testear y usar assertEquals para verificar el resultado
 		assertEquals(montoEsperado, empresa.calcularMontoParaSueldosNetosDeEmpleados(),
+	
 				"El monto total calculado para los sueldos netos de los empleados no es el esperado.");
 	}
 
@@ -256,6 +257,7 @@ public class EmpresaTest {
 				"El sueldo bruto del segundo empleado debe coincidir");
 		assertEquals(sueldoNetoEmpleadoContratado, reciboEmpleadoContratado.getSueldoNeto(),
 				"El sueldo neto del segundo empleado debe coincidir");
+		
 		
 		
 	}

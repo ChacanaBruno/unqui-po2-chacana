@@ -117,10 +117,72 @@ public class Contador {
 		}
 	}
 
-	public static void main(String[] args) {
-		int[] numeros = { 123, -4567, 12345, -678, 9012, 480 }; // Incluye números con igual cantidad máxima de dígitos
-																// pares
-		encontrarNumerosConMasDigitosPares(numeros);
+	public static int encontrarMultiploMasAlto(int x, int y) {
+		// Iniciar la búsqueda desde 1000 hacia abajo
+		for (int i = 1000; i >= 0; i--) {
+			// Comprobar si i es múltiplo de x e y
+			if (i % x == 0 && i % y == 0) {
+				return i; // Devolver i si cumple la condición
+			}
+		}
+		return -1; // Devolver -1 si no se encuentra ningún múltiplo
 	}
+
+	public static void main(String[] args) {
+		// Ejemplo de uso del método encontrarMultiploMasAlto
+		int resultado = encontrarMultiploMasAlto(3, 9);
+		System.out.println(resultado); // Debería imprimir 999
+
+		// Suponiendo que quieras usar el método encontrarNumerosConMasDigitosPares
+		int[] numeros = { 123, -4567, 12345, -678, 9012, 480 };
+		encontrarNumerosConMasDigitosPares(numeros);
+
+	}
+
+	/*
+	 * Dado el siguiente código: String a = "abc"; String s = a; String t; Indique
+	 * que valores retornan las siguientes expresiones o, si dan error, por qué se
+	 * producen: ● s.length(); ● t.length(); ● 1 + a; ● a.toUpperCase(); ●
+	 * "Libertad".indexOf("r"); ● "Universidad".lastIndexOf('i'); ●
+	 * "Quilmes".substring(2,4); ● (a.length() + a).startsWith("a"); ● s == a; ●
+	 * a.substring(1,3).equals("bc")
+	 * 
+	 * s.length();
+	 * 
+	 * Retorna la longitud de la cadena referenciada por s, que es la misma que a,
+	 * es decir, 3. t.length();
+	 * 
+	 * Produce un NullPointerException porque t no ha sido inicializada y por lo
+	 * tanto es null. 1 + a;
+	 * 
+	 * Retorna una cadena resultante de la concatenación del número 1 con la cadena
+	 * a, es decir, "1abc". a.toUpperCase();
+	 * 
+	 * Retorna una nueva cadena con todos los caracteres de a convertidos a
+	 * mayúsculas, es decir, "ABC". "Libertad".indexOf("r");
+	 * 
+	 * Retorna el índice de la primera ocurrencia de "r" en la cadena "Libertad",
+	 * que es 2. "Universidad".lastIndexOf('i');
+	 * 
+	 * Retorna el índice de la última ocurrencia de 'i' en la cadena "Universidad",
+	 * que es 7. "Quilmes".substring(2,4);
+	 * 
+	 * Retorna una nueva cadena que es una subcadena de "Quilmes", comenzando en el
+	 * índice 2 hasta 4 (sin incluir), es decir, "il". (a.length() +
+	 * a).startsWith("a");
+	 * 
+	 * Primero, se evalúa a.length() + a, lo cual resulta en "3abc". Luego, se
+	 * verifica si esta cadena comienza con "a". Esto retorna false porque la cadena
+	 * comienza con "3". s == a;
+	 * 
+	 * Compara las referencias de s y a. Dado que s fue asignado a referenciar el
+	 * mismo objeto que a, esta comparación retorna true.
+	 * a.substring(1,3).equals("bc")
+	 * 
+	 * Retorna true. a.substring(1,3) genera la subcadena desde el índice 1 hasta 3
+	 * (sin incluir el índice 3), que es "bc". Luego se compara esta subcadena con
+	 * "bc", y dado que son iguales, el resultado es true.
+
+	 */
 
 }

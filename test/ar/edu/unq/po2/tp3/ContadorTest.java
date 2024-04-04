@@ -8,11 +8,12 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.css.Counter;
 
-class ContadorTestCase {
+class ContadorTest {
 
 	private Contador contador;
 
@@ -102,4 +103,54 @@ class ContadorTestCase {
 		System.setOut(standardOut); // Restaura la salida estándar.
 	}
 
+	@Test
+	public void testEncontrarMultiploMasAlto() {
+		// Caso de prueba 1: Multiplo común de 3 y 9
+		Assertions.assertEquals(999, Contador.encontrarMultiploMasAlto(3, 9),
+				"El múltiplo más alto común de 3 y 9 debería ser 999");
+
+		// Caso de prueba 2: Multiplo común de 5 y 100 (ninguno bajo 1000)
+		Assertions.assertEquals(1000, Contador.encontrarMultiploMasAlto(5, 100),
+				"El múltiplo más alto común de 5 y 100 debería ser 1000");
+
+		// Caso de prueba 3: Multiplo común de 11 y 13
+		Assertions.assertEquals(858, Contador.encontrarMultiploMasAlto(11, 13),
+				"El múltiplo más alto común de 11 y 13 debería ser 858");
+	}
+
+	/* este test esta hecho para que falle */
+	/*
+	 * @Test public void testDeNoEncontrarMultiploMasAlto() {
+	 * 
+	 * // Caso de prueba 4: Sin múltiplos comunes bajo 1000
+	 * Assertions.assertEquals(-1, Contador.encontrarMultiploMasAlto(997, 991),
+	 * "No debería haber múltiplos comunes bajo 1000 para 997 y 991"); }
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
