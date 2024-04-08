@@ -3,6 +3,8 @@ package ar.edu.unq.po2.tp3;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tp3.Persona;
+
 import java.time.LocalDate;
 
 public class PersonaTest {

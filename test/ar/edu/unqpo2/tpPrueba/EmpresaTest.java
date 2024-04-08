@@ -20,7 +20,9 @@ public class EmpresaTest {
 	LocalDate fechaFinDeAsigcion = LocalDate.of(2024, 3, 27);
 	EmpleadoTemporal empleadoRobertoTemporal = new EmpleadoTemporal("Roberto Lala", "20-12345678-9", "Soltero",
 			fechaNacimiento, 30000.0, fechaFinDeAsigcion, 5);
-	// instancia de EmpleadoPermanente 
+	
+	// instancia de EmpleadoContratado
+	
 	EmpleadoContratado empleadoContratado = new EmpleadoContratado(
 		    "Leo Messi", // nombre
 		    "20-87654321-9", // CUIT

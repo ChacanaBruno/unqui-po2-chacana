@@ -3,6 +3,8 @@ package ar.edu.unq.po2.tp4Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tp4.ProductoPrimeraNecesidad;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductoPrimeraNecesidadTest {
@@ -16,6 +18,7 @@ public class ProductoPrimeraNecesidadTest {
 	
 	@Test
 	public void testCalcularPrecio() {
-		assertEquals(new Double(7.2), leche.getPrecio());
+		assertEquals(new Double(7.2), leche.getPrecio()); 
+		/* por que deberia retornar el precio con descuento si el producto no tiene descuento?*/
 	}
 }
