@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Supermercado {
@@ -16,6 +17,14 @@ public class Supermercado {
 		this.nombreDeSuperercado = nombreDeSuperercado;
 		this.direccion = direccion;
 	}
+
+	public Supermercado(String nombreDeSuperercado, String direccion, List<Producto> productos) {
+	    super();
+	    this.nombreDeSuperercado = nombreDeSuperercado;
+	    this.direccion = direccion;
+	    this.productos = productos != null ? productos : new ArrayList<>(); // Inicializamos la lista de productos con la lista pasada como parámetro si no es null
+	}
+
 
 	public String getNombreDeSuperercado() {
 		return nombreDeSuperercado;
@@ -55,10 +64,14 @@ public class Supermercado {
 		productos.add(producto);
 	}
 
-	public double getPrecioTotal( ) {
-		
-		for 
-	}
+
+	   public double getPrecioTotal() {
+	        double total = 0.0;
+	        for (Producto producto : productos) {
+	            total += producto.getPrecio();
+	        }
+	        return total;
+	    }
 	
 	
 	
