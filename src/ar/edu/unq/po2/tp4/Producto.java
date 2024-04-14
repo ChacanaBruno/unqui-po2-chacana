@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.tp4;
 
 public class Producto {
-	private String nombre;
-	private double precio;
-	private Boolean esPrecioCuidado;
+	protected String nombre;
+	protected double precio;
+	protected Boolean esPrecioCuidado;
 
 	public Producto() {
 

@@ -19,12 +19,13 @@ public class Supermercado {
 	}
 
 	public Supermercado(String nombreDeSuperercado, String direccion, List<Producto> productos) {
-	    super();
-	    this.nombreDeSuperercado = nombreDeSuperercado;
-	    this.direccion = direccion;
-	    this.productos = productos != null ? productos : new ArrayList<>(); // Inicializamos la lista de productos con la lista pasada como parámetro si no es null
+		super();
+		this.nombreDeSuperercado = nombreDeSuperercado;
+		this.direccion = direccion;
+		this.productos = productos != null ? productos : new ArrayList<>(); // Inicializamos la lista de productos con
+																			// la lista pasada como parámetro si no es
+																			// null
 	}
-
 
 	public String getNombreDeSuperercado() {
 		return nombreDeSuperercado;
@@ -59,27 +60,17 @@ public class Supermercado {
 			return 0;
 		}
 	}
-	
+
 	public void agregarProducto(Producto producto) {
 		productos.add(producto);
 	}
 
+	public double getPrecioTotal() {
+		double total = 0.0;
+		for (Producto producto : productos) {
+			total += producto.getPrecio();
+		}
+		return total;
+	}
 
-	   public double getPrecioTotal() {
-	        double total = 0.0;
-	        for (Producto producto : productos) {
-	            total += producto.getPrecio();
-	        }
-	        return total;
-	    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

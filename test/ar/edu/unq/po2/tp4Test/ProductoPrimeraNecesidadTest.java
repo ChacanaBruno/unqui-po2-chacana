@@ -10,15 +10,26 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductoPrimeraNecesidadTest {
 
 	private ProductoPrimeraNecesidad leche;
+	private ProductoPrimeraNecesidad mandarina;
 	
 	@BeforeEach
 	public void setUp() {
-		leche = new ProductoPrimeraNecesidad("Leche", 8d, false);
+		leche = new ProductoPrimeraNecesidad("Leche", 8, false, 10);
+		mandarina = new ProductoPrimeraNecesidad("Mandarina", 20, true , 5);
 	}
 	
 	@Test
 	public void testCalcularPrecio() {
-		assertEquals(new Double(7.2), leche.getPrecio()); 
+		assertEquals(7.2, leche.getPrecio()); 
 		/* por que deberia retornar el precio con descuento si el producto no tiene descuento?*/
 	}
+	
+	@Test
+	public void testCalcularPrecioDeMandarina() {
+		assertEquals(19, mandarina.getPrecio()); 
+		
+	}
 }
+
+
+
