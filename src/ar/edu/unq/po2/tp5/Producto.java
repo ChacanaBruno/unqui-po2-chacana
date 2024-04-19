@@ -3,16 +3,15 @@ package ar.edu.unq.po2.tp5;
 public class Producto {
 
 	protected double precio;
-	protected boolean esDeCooperativa;
+	protected int stock;
 
 	public Producto() {
 
 	}
 
-	public Producto(double precio, boolean esDeCooperativa) {
-		super();
-		setPrecio(precio);
-		this.esDeCooperativa = esDeCooperativa;
+	public Producto(double precio, int stock) {
+		this.precio = precio;
+		this.stock = stock;
 	}
 
 	public double getPrecio() {
@@ -20,26 +19,25 @@ public class Producto {
 	}
 
 	public void setPrecio(double precio) {
-		if (precio > 0) {
-			this.precio = precio;
-		} else {
-			throw new IllegalArgumentException("El precio del producto debe ser mayor que 0.");
+		this.precio = precio;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public void reducirStock() { // este metodo permite reducirStock sin que sea algo necesario.
+		if (stock != 0) {
+			stock = getStock() - 1;
 		}
-	}
 
-	public boolean isEsDeCooperativa() {
-		return esDeCooperativa;
-	}
-
-	public void setEsDeCooperativa(boolean esDeCooperativa) {
-		this.esDeCooperativa = esDeCooperativa;
 	}
 
 	public double notificarPrecio() {
 		return getPrecio();
-	}
-
-	public boolean indicarSiEsDeCooperativa() {
-		return isEsDeCooperativa();
 	}
 }

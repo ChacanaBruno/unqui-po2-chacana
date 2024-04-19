@@ -12,6 +12,7 @@ public class ProductoTest {
 	
 	private Producto arroz;
 	private Producto vino;
+
 	
 	@BeforeEach
 	public void setUp() {
