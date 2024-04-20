@@ -17,8 +17,6 @@ public class ProductoCooperativa extends Producto {
 	public ProductoCooperativa() {
 	}
 
-
-
 	public double notificarPrecio() {
 		double descuento = getPrecio() *  getDescuento();
 		double precioConDescuentoAplicado = getPrecio() - descuento;

@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class Producto {
+public class Producto implements Pagable{
 
 	protected double precio;
 	protected int stock;
